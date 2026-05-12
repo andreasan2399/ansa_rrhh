@@ -1,0 +1,33 @@
+server:
+  port: 9703
+
+spring:
+  application:
+    name: ANSA_RRHH
+
+  jackson:
+    time-zone: America/Guayaquil
+  datasource:
+    url: jdbc:postgresql://localhost:5432/escolar
+    username: postgres
+    password: Qtza5039
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+    #      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          time_zone: America/Guayaquil
+          batch_size: 1000
+          order_inserts: true
+          order_updates: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+app:
+  jobs:
+    transfer-cron: "0 0 3 * * ?"
