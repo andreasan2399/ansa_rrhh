@@ -1,0 +1,26 @@
+CREATE TABLE alumno (
+    id_alumno SERIAL  NOT NULL,
+    nombre TEXT  NOT NULL,
+    direccion TEXT  NOT NULL,
+    edad INTEGER  NOT NULL,
+    CONSTRAINT PK_alumno PRIMARY KEY (id_alumno)
+);
+CREATE TABLE profesor (
+    id_profesor SERIAL  NOT NULL,
+    nombre_profesor TEXT  NOT NULL,
+    CONSTRAINT PK_profesor PRIMARY KEY (id_profesor)
+);
+
+CREATE TABLE calificacion (
+    id_calificacion SERIAL  NOT NULL,
+    id_profesor INTEGER,
+    id_alumno INTEGER,
+    nota NUMERIC(15,2)  NOT NULL,
+    materia TEXT  NOT NULL,
+    CONSTRAINT PK_calificacion PRIMARY KEY (id_calificacion)
+);
+
+ALTER TABLE calificacion ADD CONSTRAINT profesor_calificacion
+    FOREIGN KEY (id_profesor) REFERENCES profesor (id_profesor);
+ALTER TABLE calificacion ADD CONSTRAINT alumno_calificacion
+    FOREIGN KEY (id_alumno) REFERENCES alumno (id_alumno);

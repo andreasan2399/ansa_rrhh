@@ -1,0 +1,31 @@
+http://localhost:9703/ANSA_RRHH/api/saveAlumno
+
+{
+    "nombre":"Andrea",
+    "direccion":"Gye",
+    "edad": 27
+}
+
+
+http://localhost:9703/ANSA_RRHH/api/saveProfesor
+
+{
+    "nombreProfesor": "Luis Macias"
+}
+
+
+http://localhost:9703/ANSA_RRHH/api/saveCalificacion
+{
+    "idProfesor": 1,
+    "idAlumno": 1,
+    "materia": "INFORMATICA",
+    "notas":[2.5, 10.0, 5.50]
+}
+
+
+http://localhost:9703/ANSA_RRHH/api/getPromedio
+
+{
+    "idAlumno": 1,
+    "materia": "INFORMATICA"
+}
